@@ -9,6 +9,7 @@ const outputProductsDir = path.join(outputDir, "products");
 const apiDir = path.join(root, "docs", "api");
 const apiProductsDir = path.join(apiDir, "products");
 const pagesDir = path.join(root, "docs", "products");
+const generatedAt = process.env.DEFAULTCREDS_GENERATED_AT ?? "1970-01-01T00:00:00.000Z";
 
 const allowedStatuses = new Set(["active", "historical", "reported", "no-default", "unknown"]);
 const allowedContexts = new Set(["upstream", "vendor-appliance", "docker-image", "distro-package", "ctf-lab", "sample-config", "unknown"]);
@@ -334,7 +335,7 @@ async function main() {
 
   await writeFile(
     path.join(outputDir, "search-index.json"),
-    `${JSON.stringify({ generatedAt: new Date().toISOString(), products: index }, null, 2)}\n`
+    `${JSON.stringify({ generatedAt, products: index }, null, 2)}\n`
   );
   await writeFile(
     path.join(apiDir, "products.json"),
