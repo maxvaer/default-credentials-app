@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Grafana",
+  "slug": "grafana",
+  "vendor": "Grafana Labs",
+  "category": "observability-dashboard",
+  "homepage": "https://grafana.com/",
+  "aliases": [
+    "grafana dashboard",
+    "grafana server"
+  ],
+  "tags": [
+    "web",
+    "monitoring",
+    "observability",
+    "dashboard"
+  ],
+  "services": [
+    "grafana",
+    "http"
+  ],
+  "ports": [
+    3000
+  ],
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "loginPaths": [
+    "/login"
+  ],
+  "sources": [
+    "https://grafana.com/docs/grafana/latest/setup-grafana/sign-in-to-grafana/"
+  ],
+  "credentials": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "versions": [
+        "current"
+      ],
+      "status": "active",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "grafana"
+      ],
+      "ports": [
+        3000
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/login"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "Grafana documentation says first-time sign-in uses admin for both username and password unless configured differently.",
+      "scopeNote": "Successful first login prompts the user to change the password.",
+      "sources": [
+        "https://grafana.com/docs/grafana/latest/setup-grafana/sign-in-to-grafana/"
+      ]
+    }
+  ]
+}

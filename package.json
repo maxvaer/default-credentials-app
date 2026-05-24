@@ -1,0 +1,11 @@
+{
+  "name": "defaultcreds",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "validate": "node scripts/build-data.mjs",
+    "serve": "python3 -m http.server 8080 --directory docs"
+  }
+}

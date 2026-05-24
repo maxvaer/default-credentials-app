@@ -1,0 +1,99 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Apache Airflow",
+  "slug": "apache-airflow",
+  "vendor": "Apache",
+  "category": "workflow-orchestration",
+  "homepage": "https://airflow.apache.org/",
+  "aliases": [
+    "airflow",
+    "airflow webserver",
+    "airflow api server"
+  ],
+  "tags": [
+    "web",
+    "workflow",
+    "scheduler",
+    "docker"
+  ],
+  "services": [
+    "airflow-webserver",
+    "http"
+  ],
+  "ports": [
+    8080
+  ],
+  "protocols": [
+    "http"
+  ],
+  "loginPaths": [
+    "/",
+    "/login/"
+  ],
+  "sources": [
+    "https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html",
+    "https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html"
+  ],
+  "credentials": [
+    {
+      "username": "airflow",
+      "password": "airflow",
+      "versions": [
+        "docker-compose quickstart"
+      ],
+      "status": "active",
+      "context": "docker-image",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "airflow-webserver"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http"
+      ],
+      "loginPaths": [
+        "/",
+        "/login/"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "The official Docker Compose quickstart creates an account with login airflow and password airflow.",
+      "scopeNote": "Applies to the Docker Compose quickstart, which the Airflow docs describe as suitable for learning and exploration, not production.",
+      "sources": [
+        "https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html"
+      ]
+    },
+    {
+      "username": "admin",
+      "password": "",
+      "versions": [
+        "standalone"
+      ],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "airflow-webserver"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http"
+      ],
+      "loginPaths": [
+        "/",
+        "/login/"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "The standalone command starts Airflow with an auto-generated admin password rather than a fixed default password.",
+      "scopeNote": "Check the local Airflow output or generated password file for standalone installs.",
+      "sources": [
+        "https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html"
+      ]
+    }
+  ]
+}

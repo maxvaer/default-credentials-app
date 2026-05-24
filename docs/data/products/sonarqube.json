@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "SonarQube Server",
+  "slug": "sonarqube",
+  "vendor": "SonarSource",
+  "category": "code-quality-platform",
+  "homepage": "https://www.sonarsource.com/products/sonarqube/",
+  "aliases": [
+    "sonarqube",
+    "sonarqube community build",
+    "sonar"
+  ],
+  "tags": [
+    "web",
+    "ci-cd",
+    "code-analysis"
+  ],
+  "services": [
+    "sonarqube",
+    "http"
+  ],
+  "ports": [
+    9000
+  ],
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "loginPaths": [
+    "/sessions/new"
+  ],
+  "sources": [
+    "https://docs.sonarsource.com/sonarqube-server/2025.3/instance-administration/user-management/introduction/"
+  ],
+  "credentials": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "versions": [
+        "current"
+      ],
+      "status": "active",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "sonarqube"
+      ],
+      "ports": [
+        9000
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/sessions/new"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "SonarQube creates a default administrator account during installation.",
+      "scopeNote": "Applies to local built-in SonarQube authentication before the default password is changed.",
+      "sources": [
+        "https://docs.sonarsource.com/sonarqube-server/2025.3/instance-administration/user-management/introduction/"
+      ]
+    }
+  ]
+}

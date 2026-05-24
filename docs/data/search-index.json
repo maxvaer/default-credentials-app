@@ -1,0 +1,513 @@
+{
+  "generatedAt": "2026-05-24T15:30:24.189Z",
+  "products": [
+    {
+      "product": "Apache Airflow",
+      "slug": "apache-airflow",
+      "vendor": "Apache",
+      "category": "workflow-orchestration",
+      "aliases": [
+        "airflow",
+        "airflow webserver",
+        "airflow api server"
+      ],
+      "tags": [
+        "web",
+        "workflow",
+        "scheduler",
+        "docker"
+      ],
+      "services": [
+        "airflow-webserver",
+        "http"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http"
+      ],
+      "loginPaths": [
+        "/",
+        "/login/"
+      ],
+      "credentialCount": 2,
+      "statuses": [
+        "active",
+        "no-default"
+      ],
+      "contexts": [
+        "docker-image",
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "docker-compose quickstart",
+        "standalone"
+      ],
+      "searchText": "apache airflow apache workflow-orchestration airflow airflow webserver airflow api server web workflow scheduler docker apache airflow apache workflow-orchestration airflow airflow webserver airflow api server web workflow scheduler docker airflow-webserver http 8080 http / /login/ airflow airflow airflow:airflow active docker-image vendor-docs vendor-doc the official docker compose quickstart creates an account with login airflow and password airflow. applies to the docker compose quickstart, which the airflow docs describe as suitable for learning and exploration, not production. airflow-webserver 8080 http / /login/ docker-compose quickstart apache airflow apache workflow-orchestration airflow airflow webserver airflow api server web workflow scheduler docker airflow-webserver http 8080 http / /login/ admin admin: no-default upstream vendor-docs vendor-doc the standalone command starts airflow with an auto-generated admin password rather than a fixed default password. check the local airflow output or generated password file for standalone installs. airflow-webserver 8080 http / /login/ standalone"
+    },
+    {
+      "product": "Apache Tomcat",
+      "slug": "apache-tomcat",
+      "vendor": "Apache",
+      "category": "application-server",
+      "aliases": [
+        "tomcat",
+        "tomcat manager",
+        "apache tomcat manager"
+      ],
+      "tags": [
+        "web",
+        "java",
+        "manager"
+      ],
+      "services": [
+        "http",
+        "tomcat-manager"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/host-manager/html",
+        "/manager/html"
+      ],
+      "credentialCount": 3,
+      "statuses": [
+        "historical",
+        "no-default"
+      ],
+      "contexts": [
+        "ctf-lab",
+        "upstream"
+      ],
+      "confidence": [
+        "lab-only",
+        "vendor-docs"
+      ],
+      "versions": [
+        "10.x",
+        "6.x",
+        "7.x",
+        "8.x",
+        "9.x"
+      ],
+      "searchText": "apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html tomcat tomcat tomcat:tomcat historical ctf-lab lab-only ctf commonly encountered in labs and legacy examples. verify against the target packaging and deployment source. use as a lab and legacy sample check, not as an upstream tomcat default claim. tomcat-manager 8080 http https /manager/html 6.x 7.x apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html tomcat s3cret tomcat:s3cret historical ctf-lab lab-only ctf frequently used in training environments and legacy sample configurations. use as a lab and legacy sample check, not as an upstream tomcat default claim. tomcat-manager 8080 http https /manager/html 6.x 7.x apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html : no-default upstream vendor-docs vendor-doc stock upstream tomcat does not create a default manager user. applies to upstream tomcat manager users; downstream appliances or training images may differ. tomcat-manager 8080 http https /manager/html 8.x 9.x 10.x"
+    },
+    {
+      "product": "Elastic Kibana",
+      "slug": "elastic-kibana",
+      "vendor": "Elastic",
+      "category": "search-analytics-dashboard",
+      "aliases": [
+        "kibana",
+        "elastic stack",
+        "elasticsearch"
+      ],
+      "tags": [
+        "web",
+        "search",
+        "analytics",
+        "dashboard"
+      ],
+      "services": [
+        "http",
+        "kibana"
+      ],
+      "ports": [
+        5601
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/login"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "elastic kibana elastic search-analytics-dashboard kibana elastic stack elasticsearch web search analytics dashboard elastic kibana elastic search-analytics-dashboard kibana elastic stack elasticsearch web search analytics dashboard kibana http 5601 http https /login / elastic elastic: no-default upstream vendor-docs vendor-doc elastic documentation states that the elastic user no longer has a default password and the password must be set before use. use the configured bootstrap or enrollment flow for the specific deployment. kibana 5601 http https /login / current"
+    },
+    {
+      "product": "Grafana",
+      "slug": "grafana",
+      "vendor": "Grafana Labs",
+      "category": "observability-dashboard",
+      "aliases": [
+        "grafana dashboard",
+        "grafana server"
+      ],
+      "tags": [
+        "web",
+        "monitoring",
+        "observability",
+        "dashboard"
+      ],
+      "services": [
+        "grafana",
+        "http"
+      ],
+      "ports": [
+        3000
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/login"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "active"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "grafana grafana labs observability-dashboard grafana dashboard grafana server web monitoring observability dashboard grafana grafana labs observability-dashboard grafana dashboard grafana server web monitoring observability dashboard grafana http 3000 http https /login admin admin admin:admin active upstream vendor-docs vendor-doc grafana documentation says first-time sign-in uses admin for both username and password unless configured differently. successful first login prompts the user to change the password. grafana 3000 http https /login current"
+    },
+    {
+      "product": "Jenkins",
+      "slug": "jenkins",
+      "vendor": "Jenkins",
+      "category": "ci-cd",
+      "aliases": [
+        "jenkins ci",
+        "jenkins controller"
+      ],
+      "tags": [
+        "web",
+        "ci-cd",
+        "automation"
+      ],
+      "services": [
+        "http",
+        "jenkins"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/login"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "jenkins jenkins ci-cd jenkins ci jenkins controller web ci-cd automation jenkins jenkins ci-cd jenkins ci jenkins controller web ci-cd automation jenkins http 8080 http https /login / admin admin: no-default upstream vendor-docs vendor-doc jenkins uses an initial administrator password generated on the server, not a fixed default password. the generated password is commonly stored under the jenkins home secrets directory and is required by the setup wizard. jenkins 8080 http https /login / current"
+    },
+    {
+      "product": "OpenSearch Dashboards",
+      "slug": "opensearch-dashboards",
+      "vendor": "OpenSearch Project",
+      "category": "search-analytics-dashboard",
+      "aliases": [
+        "opensearch",
+        "opensearch dashboard"
+      ],
+      "tags": [
+        "web",
+        "search",
+        "analytics",
+        "dashboard"
+      ],
+      "services": [
+        "http",
+        "opensearch-dashboards"
+      ],
+      "ports": [
+        5601
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 2,
+      "statuses": [
+        "historical",
+        "no-default"
+      ],
+      "contexts": [
+        "sample-config",
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "<= 2.11.1",
+        ">= 2.12.0",
+        "security demo configuration"
+      ],
+      "searchText": "opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch-dashboards http 5601 http https / admin admin admin:admin historical sample-config vendor-docs vendor-doc opensearch notes that the default admin password was removed starting in 2.12.0. applies to older security demo configurations; current fresh installs require a custom admin password. opensearch-dashboards 5601 http https / <= 2.11.1 security demo configuration opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch-dashboards http 5601 http https / admin admin: no-default upstream vendor-docs vendor-doc fresh installs require setting a custom admin password with opensearch_initial_admin_password. the current default username is admin, but the password is user-defined. opensearch-dashboards 5601 http https / >= 2.12.0"
+    },
+    {
+      "product": "Portainer",
+      "slug": "portainer",
+      "vendor": "Portainer",
+      "category": "container-management",
+      "aliases": [
+        "portainer ce",
+        "portainer community edition"
+      ],
+      "tags": [
+        "web",
+        "docker",
+        "containers",
+        "management"
+      ],
+      "services": [
+        "http",
+        "portainer"
+      ],
+      "ports": [
+        9000,
+        9443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "portainer portainer container-management portainer ce portainer community edition web docker containers management portainer portainer container-management portainer ce portainer community edition web docker containers management portainer http 9000 9443 http https / admin admin: no-default upstream vendor-docs vendor-doc initial setup defaults the first administrator username to admin, but the user must create a password. no fixed default password is documented for a fresh portainer setup. portainer 9000 9443 http https / current"
+    },
+    {
+      "product": "RabbitMQ",
+      "slug": "rabbitmq",
+      "vendor": "Broadcom / VMware Tanzu",
+      "category": "message-broker",
+      "aliases": [
+        "rabbitmq management",
+        "rabbitmq management ui"
+      ],
+      "tags": [
+        "web",
+        "queue",
+        "message-broker",
+        "management"
+      ],
+      "services": [
+        "amqp",
+        "rabbitmq-management"
+      ],
+      "ports": [
+        5672,
+        15672
+      ],
+      "protocols": [
+        "amqp",
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "active"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "rabbitmq broadcom / vmware tanzu message-broker rabbitmq management rabbitmq management ui web queue message-broker management rabbitmq broadcom / vmware tanzu message-broker rabbitmq management rabbitmq management ui web queue message-broker management rabbitmq-management amqp 15672 5672 http https amqp / guest guest guest:guest active upstream vendor-docs vendor-doc rabbitmq creates a default guest user with password guest on a blank node. by default the guest user can only connect from localhost; remote use is refused unless loopback restrictions are changed. rabbitmq-management amqp 15672 5672 http https amqp / current"
+    },
+    {
+      "product": "SonarQube Server",
+      "slug": "sonarqube",
+      "vendor": "SonarSource",
+      "category": "code-quality-platform",
+      "aliases": [
+        "sonarqube",
+        "sonarqube community build",
+        "sonar"
+      ],
+      "tags": [
+        "web",
+        "ci-cd",
+        "code-analysis"
+      ],
+      "services": [
+        "http",
+        "sonarqube"
+      ],
+      "ports": [
+        9000
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/sessions/new"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "active"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "sonarqube server sonarsource code-quality-platform sonarqube sonarqube community build sonar web ci-cd code-analysis sonarqube server sonarsource code-quality-platform sonarqube sonarqube community build sonar web ci-cd code-analysis sonarqube http 9000 http https /sessions/new admin admin admin:admin active upstream vendor-docs vendor-doc sonarqube creates a default administrator account during installation. applies to local built-in sonarqube authentication before the default password is changed. sonarqube 9000 http https /sessions/new current"
+    },
+    {
+      "product": "Sonatype Nexus Repository",
+      "slug": "sonatype-nexus-repository",
+      "vendor": "Sonatype",
+      "category": "artifact-repository",
+      "aliases": [
+        "nexus repository",
+        "nexus repository manager",
+        "nexus3"
+      ],
+      "tags": [
+        "web",
+        "repository",
+        "artifacts",
+        "ci-cd"
+      ],
+      "services": [
+        "http",
+        "nexus-repository"
+      ],
+      "ports": [
+        8081
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/service/rest/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "3.x current"
+      ],
+      "searchText": "sonatype nexus repository sonatype artifact-repository nexus repository nexus repository manager nexus3 web repository artifacts ci-cd sonatype nexus repository sonatype artifact-repository nexus repository nexus repository manager nexus3 web repository artifacts ci-cd nexus-repository http 8081 http https / /service/rest/ admin admin: no-default upstream vendor-docs vendor-doc nexus repository ships with an admin user, but the initial password is written to an admin.password file after startup. modern nexus repository 3 does not use a fixed default admin password. nexus-repository 8081 http https / 3.x current"
+    },
+    {
+      "product": "Zabbix",
+      "slug": "zabbix",
+      "vendor": "Zabbix",
+      "category": "monitoring-platform",
+      "aliases": [
+        "zabbix frontend",
+        "zabbix web"
+      ],
+      "tags": [
+        "web",
+        "monitoring",
+        "dashboard"
+      ],
+      "services": [
+        "http",
+        "zabbix-frontend"
+      ],
+      "ports": [
+        80,
+        443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/zabbix/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "active"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "zabbix zabbix monitoring-platform zabbix frontend zabbix web web monitoring dashboard zabbix zabbix monitoring-platform zabbix frontend zabbix web web monitoring dashboard zabbix-frontend http 80 443 http https /zabbix/ / admin zabbix admin:zabbix active upstream vendor-docs vendor-doc zabbix documentation lists admin with password zabbix for the initial frontend login. the username is case-sensitive in common deployments. zabbix-frontend 80 443 http https /zabbix/ / current"
+    }
+  ]
+}

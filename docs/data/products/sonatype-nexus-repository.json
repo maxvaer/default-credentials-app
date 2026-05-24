@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Sonatype Nexus Repository",
+  "slug": "sonatype-nexus-repository",
+  "vendor": "Sonatype",
+  "category": "artifact-repository",
+  "homepage": "https://www.sonatype.com/products/sonatype-nexus-repository",
+  "aliases": [
+    "nexus repository",
+    "nexus repository manager",
+    "nexus3"
+  ],
+  "tags": [
+    "web",
+    "repository",
+    "artifacts",
+    "ci-cd"
+  ],
+  "services": [
+    "nexus-repository",
+    "http"
+  ],
+  "ports": [
+    8081
+  ],
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "loginPaths": [
+    "/",
+    "/service/rest/"
+  ],
+  "sources": [
+    "https://help.sonatype.com/en/access-control.html"
+  ],
+  "credentials": [
+    {
+      "username": "admin",
+      "password": "",
+      "versions": [
+        "3.x current"
+      ],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "nexus-repository"
+      ],
+      "ports": [
+        8081
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "Nexus Repository ships with an admin user, but the initial password is written to an admin.password file after startup.",
+      "scopeNote": "Modern Nexus Repository 3 does not use a fixed default admin password.",
+      "sources": [
+        "https://help.sonatype.com/en/access-control.html"
+      ]
+    }
+  ]
+}
