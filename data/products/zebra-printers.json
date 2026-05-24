@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Zebra Printers",
+  "slug": "zebra-printers",
+  "vendor": "Zebra",
+  "category": "printer",
+  "homepage": "https://www.zebra.com/",
+  "aliases": ["zebra link-os", "zebranet", "zebra print server", "zebra zt", "zebra zd"],
+  "tags": ["printer", "iot", "web", "print-server"],
+  "services": ["zebra-print-server", "web-admin", "raw-print"],
+  "ports": [80, 443, 9100],
+  "protocols": ["http", "https", "raw"],
+  "loginPaths": ["/"],
+  "sources": [
+    "https://docs.zebra.com/us/en/printers/desktop/zd421-and-zd621-desktop-printers-user-guide/c-zd620-420-setup/t-zd421-zd621-ug-connecting-your-printer-to-a-computer/r-zd620-420-ethernet-lan-rj-45/r-zd200t-ug-print-server-user-id-and-password-defaults.html",
+    "https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/software/printsecure-administration-guide-en.pdf"
+  ],
+  "credentials": [
+    {
+      "username": "admin",
+      "password": "1234",
+      "versions": ["built-in print server", "ZebraNet", "Link-OS models before secure-by-default password setup"],
+      "status": "active",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["zebra-print-server", "web-admin"],
+      "ports": [80, 443],
+      "protocols": ["http", "https"],
+      "loginPaths": ["/"],
+      "lastVerified": "2026-05-24",
+      "notes": "Zebra documentation lists factory default User ID admin and factory default password 1234 for the printer's in-built print server.",
+      "scopeNote": "Applies to supported Zebra printers with built-in or ZebraNet print server access when factory credentials have not been changed.",
+      "sources": [
+        "https://docs.zebra.com/us/en/printers/desktop/zd421-and-zd621-desktop-printers-user-guide/c-zd620-420-setup/t-zd421-zd621-ug-connecting-your-printer-to-a-computer/r-zd620-420-ethernet-lan-rj-45/r-zd200t-ug-print-server-user-id-and-password-defaults.html"
+      ]
+    },
+    {
+      "username": "admin",
+      "password": "",
+      "versions": ["Link-OS 7.4.2 secure-by-default / protected mode"],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["web-admin"],
+      "ports": [80, 443],
+      "protocols": ["http", "https"],
+      "loginPaths": ["/"],
+      "lastVerified": "2026-05-24",
+      "notes": "Zebra's PrintSecure guide says the web page password is initially undefined in newer secure-by-default protected-mode behavior and must be set before it is usable.",
+      "scopeNote": "Do not assume admin:1234 on newer secure-by-default deployments, EU advanced security mode, or fleets with managed printer hardening.",
+      "sources": [
+        "https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/software/printsecure-administration-guide-en.pdf"
+      ]
+    }
+  ]
+}

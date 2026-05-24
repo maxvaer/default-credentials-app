@@ -958,6 +958,61 @@
         "current"
       ],
       "searchText": "zabbix zabbix monitoring-platform zabbix frontend zabbix web web monitoring dashboard zabbix zabbix monitoring-platform zabbix frontend zabbix web web monitoring dashboard zabbix-frontend http 80 443 http https /zabbix/ / admin zabbix admin:zabbix active upstream vendor-docs vendor-doc zabbix documentation lists admin with password zabbix for the initial frontend login. the username is case-sensitive in common deployments. zabbix-frontend 80 443 http https /zabbix/ / current"
+    },
+    {
+      "product": "Zebra Printers",
+      "slug": "zebra-printers",
+      "vendor": "Zebra",
+      "category": "printer",
+      "aliases": [
+        "zebra link-os",
+        "zebranet",
+        "zebra print server",
+        "zebra zt",
+        "zebra zd"
+      ],
+      "tags": [
+        "printer",
+        "iot",
+        "web",
+        "print-server"
+      ],
+      "services": [
+        "raw-print",
+        "web-admin",
+        "zebra-print-server"
+      ],
+      "ports": [
+        80,
+        443,
+        9100
+      ],
+      "protocols": [
+        "http",
+        "https",
+        "raw"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 2,
+      "statuses": [
+        "active",
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "Link-OS 7.4.2 secure-by-default / protected mode",
+        "Link-OS models before secure-by-default password setup",
+        "ZebraNet",
+        "built-in print server"
+      ],
+      "searchText": "zebra printers zebra printer zebra link-os zebranet zebra print server zebra zt zebra zd printer iot web print-server zebra printers zebra printer zebra link-os zebranet zebra print server zebra zt zebra zd printer iot web print-server zebra-print-server web-admin raw-print 80 443 9100 http https raw / admin 1234 admin:1234 active upstream vendor-docs vendor-doc zebra documentation lists factory default user id admin and factory default password 1234 for the printer's in-built print server. applies to supported zebra printers with built-in or zebranet print server access when factory credentials have not been changed. zebra-print-server web-admin 80 443 http https / built-in print server zebranet link-os models before secure-by-default password setup zebra printers zebra printer zebra link-os zebranet zebra print server zebra zt zebra zd printer iot web print-server zebra-print-server web-admin raw-print 80 443 9100 http https raw / admin admin: no-default upstream vendor-docs vendor-doc zebra's printsecure guide says the web page password is initially undefined in newer secure-by-default protected-mode behavior and must be set before it is usable. do not assume admin:1234 on newer secure-by-default deployments, eu advanced security mode, or fleets with managed printer hardening. web-admin 80 443 http https / link-os 7.4.2 secure-by-default / protected mode"
     }
   ]
 }
