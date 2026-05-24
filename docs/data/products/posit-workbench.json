@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Posit Workbench",
+  "slug": "posit-workbench",
+  "vendor": "Posit",
+  "category": "data-science-ide",
+  "homepage": "https://posit.co/products/enterprise/workbench/",
+  "aliases": [
+    "rstudio server",
+    "rstudio workbench",
+    "posit server"
+  ],
+  "tags": [
+    "web",
+    "rstudio",
+    "data-science",
+    "ide"
+  ],
+  "services": [
+    "posit-workbench",
+    "http"
+  ],
+  "ports": [
+    8787
+  ],
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "loginPaths": [
+    "/"
+  ],
+  "sources": [
+    "https://docs.posit.co/ide/server-pro/admin/getting_started/accessing_the_server.html"
+  ],
+  "credentials": [
+    {
+      "username": "",
+      "password": "",
+      "versions": [
+        "current"
+      ],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "posit-workbench"
+      ],
+      "ports": [
+        8787
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "Posit Workbench authenticates users with the server's configured PAM username/password scheme by default.",
+      "scopeNote": "Use valid local or enterprise-authenticated OS accounts; there is no fixed application default password.",
+      "sources": [
+        "https://docs.posit.co/ide/server-pro/admin/getting_started/accessing_the_server.html"
+      ]
+    }
+  ]
+}

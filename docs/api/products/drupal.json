@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Drupal",
+  "slug": "drupal",
+  "vendor": "Drupal",
+  "category": "content-management-system",
+  "homepage": "https://www.drupal.org/",
+  "aliases": [
+    "drupal cms",
+    "drupal core"
+  ],
+  "tags": [
+    "web",
+    "cms",
+    "php"
+  ],
+  "services": [
+    "drupal",
+    "http"
+  ],
+  "ports": [
+    80,
+    443
+  ],
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "loginPaths": [
+    "/user/login"
+  ],
+  "sources": [
+    "https://www.drupal.org/docs/user_guide/en/install-run.html"
+  ],
+  "credentials": [
+    {
+      "username": "admin",
+      "password": "",
+      "versions": [
+        "current"
+      ],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": [
+        "drupal"
+      ],
+      "ports": [
+        80,
+        443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/user/login"
+      ],
+      "lastVerified": "2026-05-24",
+      "notes": "The Drupal installer has the administrator choose credentials; the user guide says admin is a safe account name example and to choose a secure password.",
+      "scopeNote": "Treat admin as an installer convention, not a fixed default password pair.",
+      "sources": [
+        "https://www.drupal.org/docs/user_guide/en/install-run.html"
+      ]
+    }
+  ]
+}

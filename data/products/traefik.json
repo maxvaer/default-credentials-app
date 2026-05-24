@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Traefik",
+  "slug": "traefik",
+  "vendor": "Traefik Labs",
+  "category": "reverse-proxy",
+  "homepage": "https://traefik.io/",
+  "aliases": ["traefik proxy", "traefik dashboard"],
+  "tags": ["web", "reverse-proxy", "dashboard"],
+  "services": ["traefik-dashboard", "http"],
+  "ports": [8080],
+  "protocols": ["http", "https"],
+  "loginPaths": ["/dashboard/", "/api/"],
+  "sources": ["https://doc.traefik.io/traefik/v3.0/operations/dashboard/"],
+  "credentials": [
+    {
+      "username": "",
+      "password": "",
+      "versions": ["v3 current"],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["traefik-dashboard"],
+      "ports": [8080],
+      "protocols": ["http", "https"],
+      "loginPaths": ["/dashboard/", "/api/"],
+      "lastVerified": "2026-05-24",
+      "notes": "Traefik dashboard access is configured through secure mode middlewares or optional insecure mode; credentials are not fixed defaults.",
+      "scopeNote": "If insecure mode is enabled, the dashboard is exposed without application credentials on port 8080.",
+      "sources": ["https://doc.traefik.io/traefik/v3.0/operations/dashboard/"]
+    }
+  ]
+}

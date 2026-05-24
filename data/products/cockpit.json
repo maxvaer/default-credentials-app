@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Cockpit",
+  "slug": "cockpit",
+  "vendor": "Cockpit Project",
+  "category": "server-management",
+  "homepage": "https://cockpit-project.org/",
+  "aliases": ["cockpit web console", "linux web console"],
+  "tags": ["web", "linux", "server-management"],
+  "services": ["cockpit", "https"],
+  "ports": [9090],
+  "protocols": ["https"],
+  "loginPaths": ["/"],
+  "sources": ["https://docs.oracle.com/en/operating-systems/oracle-linux/cockpit/cockpit-install_logging_into_cockpit.html"],
+  "credentials": [
+    {
+      "username": "",
+      "password": "",
+      "versions": ["current"],
+      "status": "no-default",
+      "context": "distro-package",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["cockpit"],
+      "ports": [9090],
+      "protocols": ["https"],
+      "loginPaths": ["/"],
+      "lastVerified": "2026-05-24",
+      "notes": "Cockpit uses PAM and accepts valid system account credentials on the host.",
+      "scopeNote": "There is no fixed Cockpit application default; access depends on local OS users and authorization.",
+      "sources": ["https://docs.oracle.com/en/operating-systems/oracle-linux/cockpit/cockpit-install_logging_into_cockpit.html"]
+    }
+  ]
+}

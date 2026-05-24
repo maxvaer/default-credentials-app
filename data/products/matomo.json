@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "Matomo",
+  "slug": "matomo",
+  "vendor": "Matomo",
+  "category": "web-analytics",
+  "homepage": "https://matomo.org/",
+  "aliases": ["piwik", "matomo analytics"],
+  "tags": ["web", "analytics", "dashboard"],
+  "services": ["matomo", "http"],
+  "ports": [80, 443],
+  "protocols": ["http", "https"],
+  "loginPaths": ["/index.php", "/"],
+  "sources": ["https://matomo.org/docs/installation/"],
+  "credentials": [
+    {
+      "username": "",
+      "password": "",
+      "versions": ["current"],
+      "status": "no-default",
+      "context": "upstream",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["matomo"],
+      "ports": [80, 443],
+      "protocols": ["http", "https"],
+      "loginPaths": ["/index.php", "/"],
+      "lastVerified": "2026-05-24",
+      "notes": "The installer requires creating the Matomo superuser username and password during setup.",
+      "scopeNote": "No fixed default superuser credential is documented for a fresh Matomo installation.",
+      "sources": ["https://matomo.org/docs/installation/"]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schema/product.schema.json",
+  "product": "pgAdmin 4",
+  "slug": "pgadmin",
+  "vendor": "pgAdmin",
+  "category": "database-administration",
+  "homepage": "https://www.pgadmin.org/",
+  "aliases": ["pgadmin4", "postgres pgadmin", "postgresql pgadmin"],
+  "tags": ["web", "postgresql", "database", "admin"],
+  "services": ["pgadmin", "http"],
+  "ports": [80, 443, 5050],
+  "protocols": ["http", "https"],
+  "loginPaths": ["/", "/login"],
+  "sources": ["https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html"],
+  "credentials": [
+    {
+      "username": "",
+      "password": "",
+      "versions": ["container current"],
+      "status": "no-default",
+      "context": "docker-image",
+      "confidence": "vendor-docs",
+      "sourceType": "vendor-doc",
+      "services": ["pgadmin"],
+      "ports": [80, 443, 5050],
+      "protocols": ["http", "https"],
+      "loginPaths": ["/", "/login"],
+      "lastVerified": "2026-05-24",
+      "notes": "The official container requires PGADMIN_DEFAULT_EMAIL and PGADMIN_DEFAULT_PASSWORD or a password file at launch.",
+      "scopeNote": "Example values in the docs are illustrative and are not fixed product defaults.",
+      "sources": ["https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html"]
+    }
+  ]
+}

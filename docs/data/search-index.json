@@ -102,6 +102,92 @@
       "searchText": "apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html tomcat tomcat tomcat:tomcat historical ctf-lab lab-only ctf commonly encountered in labs and legacy examples. verify against the target packaging and deployment source. use as a lab and legacy sample check, not as an upstream tomcat default claim. tomcat-manager 8080 http https /manager/html 6.x 7.x apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html tomcat s3cret tomcat:s3cret historical ctf-lab lab-only ctf frequently used in training environments and legacy sample configurations. use as a lab and legacy sample check, not as an upstream tomcat default claim. tomcat-manager 8080 http https /manager/html 6.x 7.x apache tomcat apache application-server tomcat tomcat manager apache tomcat manager web java manager tomcat-manager http 8080 http https /manager/html /host-manager/html : no-default upstream vendor-docs vendor-doc stock upstream tomcat does not create a default manager user. applies to upstream tomcat manager users; downstream appliances or training images may differ. tomcat-manager 8080 http https /manager/html 8.x 9.x 10.x"
     },
     {
+      "product": "Cockpit",
+      "slug": "cockpit",
+      "vendor": "Cockpit Project",
+      "category": "server-management",
+      "aliases": [
+        "cockpit web console",
+        "linux web console"
+      ],
+      "tags": [
+        "web",
+        "linux",
+        "server-management"
+      ],
+      "services": [
+        "cockpit",
+        "https"
+      ],
+      "ports": [
+        9090
+      ],
+      "protocols": [
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "distro-package"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "cockpit cockpit project server-management cockpit web console linux web console web linux server-management cockpit cockpit project server-management cockpit web console linux web console web linux server-management cockpit https 9090 https / : no-default distro-package vendor-docs vendor-doc cockpit uses pam and accepts valid system account credentials on the host. there is no fixed cockpit application default; access depends on local os users and authorization. cockpit 9090 https / current"
+    },
+    {
+      "product": "Drupal",
+      "slug": "drupal",
+      "vendor": "Drupal",
+      "category": "content-management-system",
+      "aliases": [
+        "drupal cms",
+        "drupal core"
+      ],
+      "tags": [
+        "web",
+        "cms",
+        "php"
+      ],
+      "services": [
+        "drupal",
+        "http"
+      ],
+      "ports": [
+        80,
+        443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/user/login"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "drupal drupal content-management-system drupal cms drupal core web cms php drupal drupal content-management-system drupal cms drupal core web cms php drupal http 80 443 http https /user/login admin admin: no-default upstream vendor-docs vendor-doc the drupal installer has the administrator choose credentials; the user guide says admin is a safe account name example and to choose a secure password. treat admin as an installer convention, not a fixed default password pair. drupal 80 443 http https /user/login current"
+    },
+    {
       "product": "Elastic Kibana",
       "slug": "elastic-kibana",
       "vendor": "Elastic",
@@ -236,6 +322,188 @@
       "searchText": "jenkins jenkins ci-cd jenkins ci jenkins controller web ci-cd automation jenkins jenkins ci-cd jenkins ci jenkins controller web ci-cd automation jenkins http 8080 http https /login / admin admin: no-default upstream vendor-docs vendor-doc jenkins uses an initial administrator password generated on the server, not a fixed default password. the generated password is commonly stored under the jenkins home secrets directory and is required by the setup wizard. jenkins 8080 http https /login / current"
     },
     {
+      "product": "Jupyter Server",
+      "slug": "jupyter-server",
+      "vendor": "Project Jupyter",
+      "category": "notebook-server",
+      "aliases": [
+        "jupyter notebook",
+        "jupyter lab",
+        "jupyterlab"
+      ],
+      "tags": [
+        "web",
+        "notebook",
+        "python",
+        "data-science"
+      ],
+      "services": [
+        "http",
+        "jupyter-server"
+      ],
+      "ports": [
+        8888
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/lab",
+        "/login",
+        "/tree"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "jupyter server project jupyter notebook-server jupyter notebook jupyter lab jupyterlab web notebook python data-science jupyter server project jupyter notebook-server jupyter notebook jupyter lab jupyterlab web notebook python data-science jupyter-server http 8888 http https /login /tree /lab : no-default upstream vendor-docs vendor-doc jupyter server generates a token by default; the token can be supplied in the url, authorization header, or login form password field. no fixed username/password pair exists for a normal fresh upstream server. jupyter-server 8888 http https /login /tree /lab current"
+    },
+    {
+      "product": "Matomo",
+      "slug": "matomo",
+      "vendor": "Matomo",
+      "category": "web-analytics",
+      "aliases": [
+        "piwik",
+        "matomo analytics"
+      ],
+      "tags": [
+        "web",
+        "analytics",
+        "dashboard"
+      ],
+      "services": [
+        "http",
+        "matomo"
+      ],
+      "ports": [
+        80,
+        443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/index.php"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "matomo matomo web-analytics piwik matomo analytics web analytics dashboard matomo matomo web-analytics piwik matomo analytics web analytics dashboard matomo http 80 443 http https /index.php / : no-default upstream vendor-docs vendor-doc the installer requires creating the matomo superuser username and password during setup. no fixed default superuser credential is documented for a fresh matomo installation. matomo 80 443 http https /index.php / current"
+    },
+    {
+      "product": "MediaWiki",
+      "slug": "mediawiki",
+      "vendor": "MediaWiki",
+      "category": "wiki",
+      "aliases": [
+        "media wiki",
+        "wikimedia software"
+      ],
+      "tags": [
+        "web",
+        "wiki",
+        "php"
+      ],
+      "services": [
+        "http",
+        "mediawiki"
+      ],
+      "ports": [
+        80,
+        443
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/index.php?title=Special:UserLogin",
+        "/wiki/Special:UserLogin"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "mediawiki mediawiki wiki media wiki wikimedia software web wiki php mediawiki mediawiki wiki media wiki wikimedia software web wiki php mediawiki http 80 443 http https /index.php?title=special:userlogin /wiki/special:userlogin : no-default upstream vendor-docs vendor-doc mediawiki installation requires specifying an administrator user and password. no fixed application default username/password pair is documented for a fresh upstream install. mediawiki 80 443 http https /index.php?title=special:userlogin /wiki/special:userlogin current"
+    },
+    {
+      "product": "mongo-express",
+      "slug": "mongo-express",
+      "vendor": "mongo-express",
+      "category": "database-administration",
+      "aliases": [
+        "mongo express",
+        "mongodb express",
+        "mongo web admin"
+      ],
+      "tags": [
+        "web",
+        "mongodb",
+        "database",
+        "admin",
+        "docker"
+      ],
+      "services": [
+        "http",
+        "mongo-express"
+      ],
+      "ports": [
+        8081
+      ],
+      "protocols": [
+        "http"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "docker-image"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "official docker image"
+      ],
+      "searchText": "mongo-express mongo-express database-administration mongo express mongodb express mongo web admin web mongodb database admin docker mongo-express mongo-express database-administration mongo express mongodb express mongo web admin web mongodb database admin docker mongo-express http 8081 http / : no-default docker-image vendor-docs vendor-doc the official docker image documents blank defaults for me_config_basicauth_username and me_config_basicauth_password. basic authentication should be configured explicitly when exposing mongo-express. mongo-express 8081 http / official docker image"
+    },
+    {
       "product": "OpenSearch Dashboards",
       "slug": "opensearch-dashboards",
       "vendor": "OpenSearch Project",
@@ -284,6 +552,54 @@
       "searchText": "opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch-dashboards http 5601 http https / admin admin admin:admin historical sample-config vendor-docs vendor-doc opensearch notes that the default admin password was removed starting in 2.12.0. applies to older security demo configurations; current fresh installs require a custom admin password. opensearch-dashboards 5601 http https / <= 2.11.1 security demo configuration opensearch dashboards opensearch project search-analytics-dashboard opensearch opensearch dashboard web search analytics dashboard opensearch-dashboards http 5601 http https / admin admin: no-default upstream vendor-docs vendor-doc fresh installs require setting a custom admin password with opensearch_initial_admin_password. the current default username is admin, but the password is user-defined. opensearch-dashboards 5601 http https / >= 2.12.0"
     },
     {
+      "product": "pgAdmin 4",
+      "slug": "pgadmin",
+      "vendor": "pgAdmin",
+      "category": "database-administration",
+      "aliases": [
+        "pgadmin4",
+        "postgres pgadmin",
+        "postgresql pgadmin"
+      ],
+      "tags": [
+        "web",
+        "postgresql",
+        "database",
+        "admin"
+      ],
+      "services": [
+        "http",
+        "pgadmin"
+      ],
+      "ports": [
+        80,
+        443,
+        5050
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/login"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "docker-image"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "container current"
+      ],
+      "searchText": "pgadmin 4 pgadmin database-administration pgadmin4 postgres pgadmin postgresql pgadmin web postgresql database admin pgadmin 4 pgadmin database-administration pgadmin4 postgres pgadmin postgresql pgadmin web postgresql database admin pgadmin http 80 443 5050 http https / /login : no-default docker-image vendor-docs vendor-doc the official container requires pgadmin_default_email and pgadmin_default_password or a password file at launch. example values in the docs are illustrative and are not fixed product defaults. pgadmin 80 443 5050 http https / /login container current"
+    },
+    {
       "product": "Portainer",
       "slug": "portainer",
       "vendor": "Portainer",
@@ -327,6 +643,96 @@
         "current"
       ],
       "searchText": "portainer portainer container-management portainer ce portainer community edition web docker containers management portainer portainer container-management portainer ce portainer community edition web docker containers management portainer http 9000 9443 http https / admin admin: no-default upstream vendor-docs vendor-doc initial setup defaults the first administrator username to admin, but the user must create a password. no fixed default password is documented for a fresh portainer setup. portainer 9000 9443 http https / current"
+    },
+    {
+      "product": "Posit Workbench",
+      "slug": "posit-workbench",
+      "vendor": "Posit",
+      "category": "data-science-ide",
+      "aliases": [
+        "rstudio server",
+        "rstudio workbench",
+        "posit server"
+      ],
+      "tags": [
+        "web",
+        "rstudio",
+        "data-science",
+        "ide"
+      ],
+      "services": [
+        "http",
+        "posit-workbench"
+      ],
+      "ports": [
+        8787
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "posit workbench posit data-science-ide rstudio server rstudio workbench posit server web rstudio data-science ide posit workbench posit data-science-ide rstudio server rstudio workbench posit server web rstudio data-science ide posit-workbench http 8787 http https / : no-default upstream vendor-docs vendor-doc posit workbench authenticates users with the server's configured pam username/password scheme by default. use valid local or enterprise-authenticated os accounts; there is no fixed application default password. posit-workbench 8787 http https / current"
+    },
+    {
+      "product": "Prometheus",
+      "slug": "prometheus",
+      "vendor": "Prometheus",
+      "category": "monitoring-platform",
+      "aliases": [
+        "prometheus server",
+        "prometheus ui"
+      ],
+      "tags": [
+        "web",
+        "monitoring",
+        "metrics"
+      ],
+      "services": [
+        "http",
+        "prometheus"
+      ],
+      "ports": [
+        9090
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/",
+        "/graph",
+        "/query"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "current"
+      ],
+      "searchText": "prometheus prometheus monitoring-platform prometheus server prometheus ui web monitoring metrics prometheus prometheus monitoring-platform prometheus server prometheus ui web monitoring metrics prometheus http 9090 http https / /graph /query : no-default upstream vendor-docs vendor-doc prometheus supports web authentication through an explicit web configuration file; no fixed default ui credentials are documented. if no web authentication is configured, there is no username/password to test. prometheus 9090 http https / /graph /query current"
     },
     {
       "product": "RabbitMQ",
@@ -463,6 +869,50 @@
         "3.x current"
       ],
       "searchText": "sonatype nexus repository sonatype artifact-repository nexus repository nexus repository manager nexus3 web repository artifacts ci-cd sonatype nexus repository sonatype artifact-repository nexus repository nexus repository manager nexus3 web repository artifacts ci-cd nexus-repository http 8081 http https / /service/rest/ admin admin: no-default upstream vendor-docs vendor-doc nexus repository ships with an admin user, but the initial password is written to an admin.password file after startup. modern nexus repository 3 does not use a fixed default admin password. nexus-repository 8081 http https / 3.x current"
+    },
+    {
+      "product": "Traefik",
+      "slug": "traefik",
+      "vendor": "Traefik Labs",
+      "category": "reverse-proxy",
+      "aliases": [
+        "traefik proxy",
+        "traefik dashboard"
+      ],
+      "tags": [
+        "web",
+        "reverse-proxy",
+        "dashboard"
+      ],
+      "services": [
+        "http",
+        "traefik-dashboard"
+      ],
+      "ports": [
+        8080
+      ],
+      "protocols": [
+        "http",
+        "https"
+      ],
+      "loginPaths": [
+        "/api/",
+        "/dashboard/"
+      ],
+      "credentialCount": 1,
+      "statuses": [
+        "no-default"
+      ],
+      "contexts": [
+        "upstream"
+      ],
+      "confidence": [
+        "vendor-docs"
+      ],
+      "versions": [
+        "v3 current"
+      ],
+      "searchText": "traefik traefik labs reverse-proxy traefik proxy traefik dashboard web reverse-proxy dashboard traefik traefik labs reverse-proxy traefik proxy traefik dashboard web reverse-proxy dashboard traefik-dashboard http 8080 http https /dashboard/ /api/ : no-default upstream vendor-docs vendor-doc traefik dashboard access is configured through secure mode middlewares or optional insecure mode; credentials are not fixed defaults. if insecure mode is enabled, the dashboard is exposed without application credentials on port 8080. traefik-dashboard 8080 http https /dashboard/ /api/ v3 current"
     },
     {
       "product": "Zabbix",
