@@ -1,11 +1,26 @@
 {
-  "name": "defaultcreds",
-  "version": "0.1.0",
+  "name": "default-credentials-app",
+  "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build:data": "node scripts/build-data.mjs",
-    "validate": "node scripts/build-data.mjs",
-    "serve": "python3 -m http.server 8080 --directory docs"
+    "build:index": "node scripts/build-index.mjs",
+    "predev": "npm run build:index",
+    "prebuild": "npm run build:index",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "minisearch": "^7.1.1",
+    "next": "^15.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.2"
   }
 }

@@ -1,43 +1,34 @@
-# defaultcreds
+# default-credentials-app
 
-A static, searchable reference for public default credentials, designed to be backed by community GitHub contributions.
+Searchable web UI + JSON API for the public default-credentials dataset at
+https://github.com/maxvaer/default-credentials.
 
-The site follows an endoflife.date-style model: each product has a stable page, generated JSON API output, and credential records scoped to versions, services, ports, contexts, confidence, and sources.
+Hosted on Vercel. The data repo is the source of truth — this app pulls it in at
+build time, builds an in-memory search index, and serves it via Next.js API routes.
 
-## Local Development
+## API
+
+- `GET /api/products` — list of all products
+- `GET /api/products/:slug` — one product with all credentials
+- `GET /api/search?q=tomcat&limit=20` — search by product / vendor / alias / username
+
+## Local dev
+
+Clone the data repo as a sibling directory:
 
 ```sh
-npm run build:data
-npm run serve
+git clone https://github.com/maxvaer/default-credentials.git ../default-credentials
 ```
 
-Then open `http://127.0.0.1:8080`.
+Or set `DATA_REPO_PATH` to wherever you have it. Then:
 
-## Data Model
+```sh
+npm install
+npm run build:index   # parses data repo into lib/data/products.json
+npm run dev           # http://localhost:3000
+```
 
-Product records live in `data/products/*.json`. Each credential can include:
+## Adding credentials
 
-- `username` and `password`
-- `versions`, such as `8.x`, `9.0.x`, `<= 2.1.4`, or `firmware 3.x`
-- `status`, one of `active`, `historical`, `reported`, `no-default`, or `unknown`
-- `context`, such as `upstream`, `vendor-appliance`, `docker-image`, `distro-package`, or `ctf-lab`
-- `services`, `ports`, `protocols`, and `loginPaths` for pentest search workflows
-- `confidence`, `sourceType`, `lastVerified`, and `scopeNote` for data quality
-- `sources` for verification
-
-The formal schema lives at `schema/product.schema.json`. The build script validates product files and writes:
-
-- `docs/data/search-index.json` for the web UI
-- `docs/data/products/*.json` for product detail loading
-- `docs/api/products.json` for product index consumers
-- `docs/api/products/*.json` for per-product API consumers
-- `docs/api/credentials.json` for flat credential search tooling
-- `docs/products/<slug>/index.html` for stable product pages
-
-## Upstream Dataset
-
-The intended source of truth is:
-
-https://github.com/maxvaer/default-credentials
-
-Records must describe public default, vendor, sample, appliance, or lab credentials only. Do not submit leaked, stolen, customer-specific, or environment-specific secrets.
+Open a PR against the [data repo](https://github.com/maxvaer/default-credentials),
+not this one. The schema (`schema/product.schema.json`) is enforced in CI.
