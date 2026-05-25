@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Result = {
   slug: string;
@@ -13,7 +13,9 @@ type Result = {
 export default function SearchBox() {
   const [q, setQ] = useState("");
   const [results, setResults] = useState<Result[]>([]);
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!q.trim()) {
@@ -30,31 +32,45 @@ export default function SearchBox() {
     return () => ctrl.abort();
   }, [q]);
 
+  useEffect(() => {
+    const onDocClick = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
+
+  const showDropdown = open && q.trim().length > 0;
+
   return (
-    <>
+    <div className="search-wrap" ref={wrapRef}>
       <input
         className="search-box"
-        autoFocus
-        placeholder="e.g. tomcat, cisco, mongodb"
+        placeholder="Search products, vendors, usernames…"
         value={q}
-        onChange={(e) => setQ(e.target.value)}
+        onChange={(e) => { setQ(e.target.value); setOpen(true); }}
+        onFocus={() => setOpen(true)}
+        onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}
       />
-      {q.trim() && (
-        <div className="results">
-          {results.map((r) => (
-            <a key={r.slug} href={`/product/${r.slug}`} className="result">
-              <span>
-                <span className="product">{r.product}</span>
-                {r.vendor && <span className="pill" style={{ marginLeft: "0.6rem" }}>{r.vendor}</span>}
-              </span>
-              <span className="count">{r.credentialCount} cred{r.credentialCount === 1 ? "" : "s"}</span>
-            </a>
-          ))}
-          {!loading && results.length === 0 && (
-            <p className="hint">No matches. Got data? Open a PR against the data repo.</p>
+      {showDropdown && (
+        <div className="search-dropdown" role="listbox">
+          {results.length > 0 ? (
+            results.map((r) => (
+              <a key={r.slug} href={`/product/${r.slug}`} className="result">
+                <span>
+                  <span className="product">{r.product}</span>
+                  {r.vendor && <span className="pill" style={{ marginLeft: "0.6rem" }}>{r.vendor}</span>}
+                </span>
+                <span className="count">{r.credentialCount} cred{r.credentialCount === 1 ? "" : "s"}</span>
+              </a>
+            ))
+          ) : (
+            !loading && <p className="hint" style={{ margin: "0.5rem 0.8rem" }}>No matches.</p>
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }

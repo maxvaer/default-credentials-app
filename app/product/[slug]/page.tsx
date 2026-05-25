@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { productsBySlug, products, type Credential } from "@/lib/index";
+import CopyChip from "@/app/CopyChip";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -61,13 +62,19 @@ function partitionColumns(creds: Credential[]) {
 function fmt(c: Credential, key: string) {
   switch (key) {
     case "verified":
-      return c.verified === true ? <span className="badge-verified" title="Independently confirmed">✓</span> : <span className="muted">—</span>;
+      return c.verified === true ? (
+        <span className="badge-verified" title="Independently confirmed">
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true">
+            <path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      ) : <span className="muted">—</span>;
     case "username":
-      return c.username === "" ? <span className="muted">(blank)</span> : <code>{c.username}</code>;
+      return c.username === "" ? <span className="muted">(blank)</span> : <CopyChip value={c.username} />;
     case "password":
       if (c.password === "") return <span className="muted">(blank)</span>;
       if (c.password == null) return <span className="muted">—</span>;
-      return <code>{c.password}</code>;
+      return <CopyChip value={c.password} />;
     case "versions":
       return c.versions?.join(", ") ?? <span className="muted">—</span>;
     case "role":

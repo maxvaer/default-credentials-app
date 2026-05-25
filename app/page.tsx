@@ -1,5 +1,4 @@
 import { products, vendors, type Product, type Vendor } from "@/lib/index";
-import SearchBox from "./SearchBox";
 import IndexToggle from "./IndexToggle";
 
 function groupByLetter<T>(items: T[], label: (item: T) => string) {
@@ -22,6 +21,10 @@ function groupByLetter<T>(items: T[], label: (item: T) => string) {
     }));
 }
 
+function hasVerifiedCred(p: Product): boolean {
+  return p.credentials.some((c) => c.verified === true);
+}
+
 function AlphaNav({ letters, idPrefix }: { letters: string[]; idPrefix: string }) {
   return (
     <div className="alpha-nav">
@@ -32,14 +35,15 @@ function AlphaNav({ letters, idPrefix }: { letters: string[]; idPrefix: string }
   );
 }
 
-function ProductsIndex({ groups }: { groups: { letter: string; items: Product[] }[] }) {
+function ProductsIndex({ groups, idPrefix = "p" }: { groups: { letter: string; items: Product[] }[]; idPrefix?: string }) {
+  if (groups.length === 0) return <p className="hint">No products match.</p>;
   return (
     <>
-      <AlphaNav letters={groups.map((g) => g.letter)} idPrefix="p" />
+      <AlphaNav letters={groups.map((g) => g.letter)} idPrefix={idPrefix} />
       <section className="index">
         {groups.map(({ letter, items }) => (
           <div key={letter} className="index-group">
-            <h2 id={`p-${letter}`}>{letter}</h2>
+            <h2 id={`${idPrefix}-${letter}`}>{letter}</h2>
             <ul>
               {items.map((p) => (
                 <li key={p.slug}>
@@ -56,14 +60,15 @@ function ProductsIndex({ groups }: { groups: { letter: string; items: Product[] 
   );
 }
 
-function VendorsIndex({ groups }: { groups: { letter: string; items: Vendor[] }[] }) {
+function VendorsIndex({ groups, idPrefix = "v" }: { groups: { letter: string; items: Vendor[] }[]; idPrefix?: string }) {
+  if (groups.length === 0) return <p className="hint">No vendors match.</p>;
   return (
     <>
-      <AlphaNav letters={groups.map((g) => g.letter)} idPrefix="v" />
+      <AlphaNav letters={groups.map((g) => g.letter)} idPrefix={idPrefix} />
       <section className="index">
         {groups.map(({ letter, items }) => (
           <div key={letter} className="index-group">
-            <h2 id={`v-${letter}`}>{letter}</h2>
+            <h2 id={`${idPrefix}-${letter}`}>{letter}</h2>
             <ul>
               {items.map((v) => (
                 <li key={v.slug}>
@@ -80,21 +85,29 @@ function VendorsIndex({ groups }: { groups: { letter: string; items: Vendor[] }[
 }
 
 export default function Home() {
+  const verifiedProducts = products.filter(hasVerifiedCred);
+  const verifiedSlugs = new Set(verifiedProducts.map((p) => p.slug));
+  const verifiedVendors = vendors
+    .map((v) => ({ ...v, products: v.products.filter((p) => verifiedSlugs.has(p.slug)) }))
+    .filter((v) => v.products.length > 0);
+
   const productGroups = groupByLetter(products, (p) => p.product);
+  const verifiedProductGroups = groupByLetter(verifiedProducts, (p) => p.product);
   const vendorGroups = groupByLetter(vendors, (v) => v.name);
+  const verifiedVendorGroups = groupByLetter(verifiedVendors, (v) => v.name);
 
   return (
     <>
-      <h1>default-credentials</h1>
-      <p className="muted">
+      <p className="muted" style={{ marginTop: 0 }}>
         Public default credentials for pentesters and CTF players. {products.length} products · {vendors.length} vendors.
       </p>
 
-      <SearchBox />
-
       <IndexToggle
-        productsView={<ProductsIndex groups={productGroups} />}
-        vendorsView={<VendorsIndex groups={vendorGroups} />}
+        productsView={<ProductsIndex groups={productGroups} idPrefix="p" />}
+        vendorsView={<VendorsIndex groups={vendorGroups} idPrefix="v" />}
+        productsViewVerified={<ProductsIndex groups={verifiedProductGroups} idPrefix="pv" />}
+        vendorsViewVerified={<VendorsIndex groups={verifiedVendorGroups} idPrefix="vv" />}
+        verifiedCount={verifiedProducts.length}
       />
     </>
   );

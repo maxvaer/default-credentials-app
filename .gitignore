@@ -3,5 +3,5 @@ node_modules
 out
 .env.local
 .DS_Store
-data-index.json
 data-cache/
+lib/data/products.json

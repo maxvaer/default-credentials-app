@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "fetch:data": "node scripts/fetch-data.mjs",
     "build:index": "node scripts/build-index.mjs",
     "predev": "npm run build:index",
-    "prebuild": "npm run build:index",
+    "prebuild": "npm run fetch:data && npm run build:index",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

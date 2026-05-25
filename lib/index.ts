@@ -48,17 +48,33 @@ export function vendorSlug(vendor: string): string {
 export type Vendor = { name: string; slug: string; products: Product[] };
 
 export const vendors: Vendor[] = (() => {
-  const byName = new Map<string, Product[]>();
+  // Group by slug, not by raw vendor name — CIRT has inconsistent
+  // capitalization (e.g. "Grandstream" vs "GrandStream") that produces
+  // duplicate React keys when each spelling becomes its own list entry.
+  type Bucket = { products: Product[]; names: Map<string, number> };
+  const bySlug = new Map<string, Bucket>();
   for (const p of products) {
     if (!p.vendor) continue;
-    if (!byName.has(p.vendor)) byName.set(p.vendor, []);
-    byName.get(p.vendor)!.push(p);
+    const slug = vendorSlug(p.vendor);
+    if (!slug) continue;
+    let bucket = bySlug.get(slug);
+    if (!bucket) {
+      bucket = { products: [], names: new Map() };
+      bySlug.set(slug, bucket);
+    }
+    bucket.products.push(p);
+    bucket.names.set(p.vendor, (bucket.names.get(p.vendor) ?? 0) + 1);
   }
-  const list: Vendor[] = [...byName.entries()].map(([name, ps]) => ({
-    name,
-    slug: vendorSlug(name),
-    products: [...ps].sort((a, b) => a.product.localeCompare(b.product)),
-  }));
+  const list: Vendor[] = [...bySlug.entries()].map(([slug, bucket]) => {
+    // Display name: the most frequent spelling, tiebroken alphabetically.
+    const name = [...bucket.names.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0][0];
+    return {
+      name,
+      slug,
+      products: [...bucket.products].sort((a, b) => a.product.localeCompare(b.product)),
+    };
+  });
   list.sort((a, b) => a.name.localeCompare(b.name));
   return list;
 })();

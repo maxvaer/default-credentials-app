@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SearchBox from "./SearchBox";
 
 export const metadata: Metadata = {
   title: "default-credentials",
@@ -18,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </svg>
             default-credentials
           </a>
+          <SearchBox />
           <nav>
-            <a href="/">Browse</a>
             <a href="/api/products">API</a>
             <a href="https://github.com/maxvaer/default-credentials" target="_blank" rel="noreferrer">Data</a>
             <a href="https://github.com/maxvaer/default-credentials-app" target="_blank" rel="noreferrer">App</a>
@@ -27,6 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main>{children}</main>
         <footer>
+          <p className="disclaimer">
+            <strong>For authorized use only.</strong> This catalog of public default credentials is provided for
+            pentesting engagements, CTF challenges, security research, and the operators of systems you own or have
+            written permission to test. Using these credentials against systems you do not own or are not authorized
+            to test is illegal in most jurisdictions and unethical everywhere.
+          </p>
           <small>
             Data: <a href="https://github.com/maxvaer/default-credentials">maxvaer/default-credentials</a>.
             Initial seed from <a href="https://cirt.net/passwords">CIRT.net</a>.
