@@ -34,10 +34,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             written permission to test. Using these credentials against systems you do not own or are not authorized
             to test is illegal in most jurisdictions and unethical everywhere.
           </p>
-          <small>
-            Data: <a href="https://github.com/maxvaer/default-credentials">maxvaer/default-credentials</a>.
-            Initial seed from <a href="https://cirt.net/passwords">CIRT.net</a>.
-          </small>
+          <nav className="footer-nav">
+            <a href="/impressum">Impressum</a>
+            <span aria-hidden="true">·</span>
+            <a href="/datenschutz">Datenschutz</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://github.com/maxvaer/default-credentials" target="_blank" rel="noreferrer">Data repo</a>
+          </nav>
         </footer>
       </body>
     </html>

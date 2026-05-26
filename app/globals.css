@@ -100,6 +100,43 @@ footer .disclaimer {
 }
 footer .disclaimer strong { color: var(--accent); }
 footer small { color: var(--muted); }
+footer .footer-nav {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+footer .footer-nav a { color: var(--muted-strong); }
+footer .footer-nav a:hover { color: var(--accent); }
+
+/* --- legal pages (Impressum / Datenschutz) --- */
+.legal {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.legal h1 {
+  font-size: 1.6rem;
+  margin: 0 0 1.5rem;
+}
+.legal h2 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text);
+}
+.legal p {
+  color: var(--muted-strong);
+  margin: 0 0 0.9rem;
+  line-height: 1.65;
+}
+.legal a { color: var(--accent); }
+.legal code {
+  color: var(--accent);
+  background: rgba(95, 213, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
 
 /* --- titles --- */
 h1 {
