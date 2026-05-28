@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SearchBox from "./SearchBox";
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="https://github.com/maxvaer/default-credentials" target="_blank" rel="noreferrer">Data repo</a>
           </nav>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
