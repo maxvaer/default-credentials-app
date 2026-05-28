@@ -137,6 +137,39 @@ footer .footer-nav a:hover { color: var(--accent); }
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
 }
+.legal ul {
+  color: var(--muted-strong);
+  line-height: 1.65;
+  padding-left: 1.25rem;
+  margin: 0 0 0.9rem;
+}
+.legal ul li { margin: 0.15rem 0; }
+.legal-header {
+  margin-bottom: 1.5rem;
+}
+.legal-header .muted {
+  font-size: 0.85rem;
+}
+.legal h2 .badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+.legal h2 .badge-on {
+  background: rgba(95, 255, 159, 0.15);
+  color: #5fff9f;
+  border: 1px solid rgba(95, 255, 159, 0.35);
+}
+.legal h2 .badge-planned {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+}
 
 /* --- titles --- */
 h1 {
