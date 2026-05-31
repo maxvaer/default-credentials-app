@@ -107,8 +107,22 @@ export default function DatenschutzPage() {
         </a>
       </p>
 
+      <h2>5. Öffentliche JSON-API</h2>
+      <p>
+        Diese Website stellt ihre Inhalte zusätzlich über eine offene, frei zugängliche
+        JSON-API bereit (u. a. <code>/api/products</code>, <code>/api/products/[slug]</code>{" "}
+        und <code>/api/search</code>).
+      </p>
+      <p>
+        Über die API werden ausschließlich die öffentlichen, nicht personenbezogenen Datensätze
+        zu Standard-Zugangsdaten ausgeliefert. Es werden keinerlei personenbezogene Daten der
+        Nutzenden erhoben, gespeichert oder verarbeitet; eine Authentifizierung oder
+        Registrierung ist nicht erforderlich. Für API-Aufrufe gelten dieselben technisch
+        notwendigen Server-Logfiles wie in Abschnitt 3 beschrieben (Art. 6 Abs. 1 lit. f DSGVO).
+      </p>
+
       <h2>
-        5. Blog{" "}
+        6. Blog{" "}
         <span className="badge badge-planned">Geplant</span>
       </h2>
       <p>
@@ -126,13 +140,19 @@ export default function DatenschutzPage() {
         aktualisiert und eine separate Einwilligung eingeholt, sofern erforderlich.
       </p>
 
-      <h2>6. Cookies</h2>
+      <h2>7. Cookies</h2>
       <p>
         Diese Website verwendet keine Cookies zu Tracking- oder Werbezwecken. Es werden
         ausschließlich technisch notwendige Funktionen der Vercel-Infrastruktur genutzt.
       </p>
+      <p>
+        Es werden zudem keine externen Schriftarten (z. B. Google Fonts) oder externen CDNs
+        eingebunden — sämtliche Schriftarten stammen aus systemeigenen Schrift-Stacks und alle
+        Assets werden von der eigenen Domain ausgeliefert. Beim Seitenaufruf entsteht dadurch
+        keine Verbindung zu Drittanbietern (außer dem Hoster Vercel, Abschnitt 3).
+      </p>
 
-      <h2>7. Deine Rechte</h2>
+      <h2>8. Deine Rechte</h2>
       <p>Nach der DSGVO stehen dir folgende Rechte zu:</p>
       <ul>
         <li>Auskunftsrecht (Art. 15 DSGVO)</li>
@@ -153,14 +173,14 @@ export default function DatenschutzPage() {
         Informationsfreiheit (BfDI) oder die zuständige Landesbehörde.
       </p>
 
-      <h2>8. Externe Links</h2>
+      <h2>9. Externe Links</h2>
       <p>
         Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir
         keinen Einfluss haben. Für Inhalte und Datenschutz verlinkter Seiten ist stets der
         jeweilige Anbieter verantwortlich.
       </p>
 
-      <h2>9. Aktualität &amp; Änderungen</h2>
+      <h2>10. Aktualität &amp; Änderungen</h2>
       <p>
         Diese Datenschutzerklärung hat den Stand Mai 2026. Durch die Weiterentwicklung des
         Angebots (z. B. Blog, Newsletter) kann eine Anpassung notwendig werden. Die jeweils
