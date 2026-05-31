@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteOwner, ownerAddress } from "@/lib/legal-owner";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung · default-credentials",
@@ -6,9 +7,9 @@ export const metadata: Metadata = {
 };
 
 const CONTROLLER = {
-  name: "***REDACTED***",
-  address: "***REDACTED***",
-  email: "***REDACTED***",
+  name: siteOwner.name,
+  address: ownerAddress(),
+  email: siteOwner.email,
 };
 
 export default function DatenschutzPage() {

@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
+import { siteOwner as SITE_OWNER } from "@/lib/legal-owner";
 
 export const metadata: Metadata = {
   title: "Impressum · default-credentials",
   robots: { index: false, follow: false },
-};
-
-const SITE_OWNER = {
-  name: "***REDACTED***",
-  street: "***REDACTED***",
-  postalCode: "***REDACTED***",
-  city: "***REDACTED***",
-  country: "Deutschland",
-  email: "***REDACTED***",
-  vatId: undefined as string | undefined,
 };
 
 export default function ImpressumPage() {
