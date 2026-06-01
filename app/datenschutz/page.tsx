@@ -40,7 +40,8 @@ export default function DatenschutzPage() {
       </p>
       <p>
         Es werden keine personenbezogenen Daten aktiv erhoben. Es werden lediglich anonymisierte
-        Nutzungsstatistiken über Vercel Analytics erfasst (siehe Abschnitt 4).
+        Nutzungs- und Performance-Statistiken über Vercel Analytics und Speed Insights erfasst
+        (siehe Abschnitt 4).
       </p>
 
       <h2>3. Hosting bei Vercel</h2>
@@ -74,7 +75,7 @@ export default function DatenschutzPage() {
       </p>
 
       <h2>
-        4. Vercel Analytics{" "}
+        4. Vercel Analytics &amp; Speed Insights{" "}
         <span className="badge badge-on">Aktiv</span>
       </h2>
       <p>
@@ -104,6 +105,25 @@ export default function DatenschutzPage() {
           rel="noreferrer"
         >
           Vercel Analytics Datenschutz →
+        </a>
+      </p>
+      <p>
+        Zusätzlich nutzen wir <strong>Vercel Speed Insights</strong> zur Erhebung anonymer
+        Performance-Messwerte (z. B. Ladezeiten und Core Web Vitals), um die Geschwindigkeit der
+        Website zu überwachen und zu verbessern. Auch Speed Insights ist datenschutzfreundlich
+        konzipiert: es werden keine Cookies gesetzt, keine IP-Adressen gespeichert und keine
+        personenbezogenen Daten verarbeitet; die Messwerte sind aggregiert und nicht auf einzelne
+        Personen zurückführbar. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+        Interesse an einem performanten Angebot).
+      </p>
+      <p>
+        Weitere Informationen:{" "}
+        <a
+          href="https://vercel.com/docs/speed-insights/privacy-policy"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Vercel Speed Insights Datenschutz →
         </a>
       </p>
 
