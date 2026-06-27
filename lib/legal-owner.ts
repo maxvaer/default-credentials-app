@@ -11,12 +11,15 @@ const env = (k: string) => process.env[k]?.trim() || "";
 
 export const siteOwner = {
   name: env("IMPRESSUM_NAME"),
+  // c/o line shown between name and street when set.
+  careOf: env("IMPRESSUM_CARE_OF") || undefined,
   street: env("IMPRESSUM_STREET"),
   postalCode: env("IMPRESSUM_POSTAL_CODE"),
   city: env("IMPRESSUM_CITY"),
   country: env("IMPRESSUM_COUNTRY") || "Deutschland",
   email: env("IMPRESSUM_EMAIL"),
   // Optional — omitted from the page when empty.
+  secondContact: env("IMPRESSUM_SECOND_CONTACT") || undefined,
   vatId: env("IMPRESSUM_VAT_ID") || undefined,
 };
 

@@ -14,6 +14,7 @@ export default function ImpressumPage() {
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
         {SITE_OWNER.name}<br />
+        {SITE_OWNER.careOf && <>{SITE_OWNER.careOf}<br /></>}
         {SITE_OWNER.street}<br />
         {SITE_OWNER.postalCode} {SITE_OWNER.city}<br />
         {SITE_OWNER.country}
@@ -22,6 +23,9 @@ export default function ImpressumPage() {
       <h2>Kontakt</h2>
       <p>
         E-Mail: <a href={`mailto:${SITE_OWNER.email}`}>{SITE_OWNER.email}</a>
+        {SITE_OWNER.secondContact && (
+          <><br />Zweiter Kontaktweg: <a href={SITE_OWNER.secondContact} target="_blank" rel="noreferrer">{SITE_OWNER.secondContact}</a></>
+        )}
       </p>
 
       {SITE_OWNER.vatId && (
@@ -37,8 +41,15 @@ export default function ImpressumPage() {
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
       <p>
         {SITE_OWNER.name}<br />
+        {SITE_OWNER.careOf && <>{SITE_OWNER.careOf}<br /></>}
         {SITE_OWNER.street}<br />
         {SITE_OWNER.postalCode} {SITE_OWNER.city}
+      </p>
+
+      <h2>Zuständige Regulierungs- und Aufsichtsbehörde</h2>
+      <p>
+        Landesanstalt für Medien Nordrhein-Westfalen<br />
+        Sitz: Deutschland
       </p>
 
       <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
