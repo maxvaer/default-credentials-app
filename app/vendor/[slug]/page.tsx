@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { vendors, vendorsBySlug } from "@/lib/index";
 
 export function generateStaticParams() {
   return vendors.map((v) => ({ slug: v.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const vendor = vendorsBySlug.get(slug);
+  if (!vendor) return {};
+  const title = `${vendor.name} default credentials`;
+  const description = `Default credentials for all ${vendor.name} products. ${vendor.products.length} product${vendor.products.length === 1 ? "" : "s"} in the database.`;
+  return {
+    title,
+    description,
+    openGraph: { title, description },
+    alternates: { canonical: `https://credentials.pentesting-labs.com/vendor/${slug}` },
+  };
 }
 
 export default async function VendorPage({ params }: { params: Promise<{ slug: string }> }) {

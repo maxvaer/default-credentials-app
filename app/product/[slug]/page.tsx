@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { productsBySlug, products, type Credential } from "@/lib/index";
 import CopyChip from "@/app/CopyChip";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = productsBySlug.get(slug);
+  if (!product) return {};
+  const title = `${product.product} default credentials`;
+  const description = product.vendor
+    ? `Default username and password for ${product.product} by ${product.vendor}. ${product.credentials.length} credential set${product.credentials.length === 1 ? "" : "s"}.`
+    : `Default username and password for ${product.product}. ${product.credentials.length} credential set${product.credentials.length === 1 ? "" : "s"}.`;
+  return {
+    title,
+    description,
+    openGraph: { title, description },
+    alternates: { canonical: `https://credentials.pentesting-labs.com/product/${slug}` },
+  };
 }
 
 // Returns the columns that vary across the credential list, plus a map of

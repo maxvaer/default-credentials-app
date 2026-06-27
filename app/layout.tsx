@@ -5,8 +5,38 @@ import "./globals.css";
 import SearchBox from "./SearchBox";
 
 export const metadata: Metadata = {
-  title: "default-credentials",
-  description: "Searchable database of public default credentials for pentesters and CTF players.",
+  metadataBase: new URL("https://credentials.pentesting-labs.com"),
+  title: {
+    default: "Default Credentials — searchable database for pentesters",
+    template: "%s · default-credentials",
+  },
+  description:
+    "Searchable database of public default credentials for network devices and software. 1039 products, 567 vendors, free JSON API.",
+  keywords: [
+    "default credentials",
+    "default password",
+    "default username",
+    "pentest",
+    "CTF",
+    "network device passwords",
+  ],
+  openGraph: {
+    title: "Default Credentials Database",
+    description:
+      "Searchable database of public default credentials for network devices and software. 1039 products, open JSON API.",
+    url: "https://credentials.pentesting-labs.com",
+    siteName: "default-credentials · Pentesting Labs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Default Credentials Database",
+    description:
+      "1039 products, 567 vendors — public default credentials with a free JSON API for pentesters and CTF players.",
+  },
+  alternates: {
+    canonical: "https://credentials.pentesting-labs.com",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
