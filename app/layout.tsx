@@ -67,6 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             to test is illegal in most jurisdictions and unethical everywhere.
           </p>
           <nav className="footer-nav">
+            <a href="https://pentesting-labs.com">Pentesting Labs</a>
+            <span aria-hidden="true">·</span>
             <a href="/impressum">Impressum</a>
             <span aria-hidden="true">·</span>
             <a href="/datenschutz">Datenschutz</a>

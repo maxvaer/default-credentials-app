@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { productsBySlug, products, type Credential } from "@/lib/index";
+import { productsBySlug, products, vendorSlug, type Credential } from "@/lib/index";
 import CopyChip from "@/app/CopyChip";
 
 export function generateStaticParams() {
@@ -117,11 +117,36 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   const { varying, shared } = partitionColumns(product.credentials);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Default Credentials", item: "https://credentials.pentesting-labs.com" },
+          { "@type": "ListItem", position: 2, name: product.product },
+        ],
+      },
+      {
+        "@type": "Dataset",
+        name: `${product.product} default credentials`,
+        description: product.vendor
+          ? `Default login credentials for ${product.product} by ${product.vendor}.`
+          : `Default login credentials for ${product.product}.`,
+        url: `https://credentials.pentesting-labs.com/product/${product.slug}`,
+        creator: { "@type": "Organization", name: "Pentesting Labs", url: "https://pentesting-labs.com" },
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <h1>{product.product}</h1>
       <p className="muted">
-        {product.vendor && <>vendor: {product.vendor} · </>}
+        {product.vendor && (
+          <>vendor: <a href={`/vendor/${vendorSlug(product.vendor)}`}>{product.vendor}</a> · </>
+        )}
         slug: <code>{product.slug}</code>
         {product.category && <> · category: {product.category}</>}
       </p>
